@@ -101,13 +101,13 @@ const EditProfile = ({setOnEdit}) => {
                     </small>
                 </div>
 
-                <label htmlFor="gender">Gender</label>
+                <label htmlFor="gender">Género</label>
                 <div className="input-group-prepend px-0 mb-4">
                     <select name="gender" id="gender" value={gender}
                     className="custom-select text-capitalize"
                     onChange={handleInput}>
-                        <option value="male">Masculino</option>
-                        <option value="female">Femenino</option>
+                        <option value="male">Hombre</option>
+                        <option value="female">Mujer</option>
                         <option value="other">Otro</option>
                     </select>
                 </div>

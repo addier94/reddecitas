@@ -23,10 +23,9 @@ export const imageUpload = async (images) => {
             formData.append("file", item)
         }
         
-        formData.append("upload_preset", process.env.REACT_APP_UPLOAD_PRESET)
-        formData.append("cloud_name", process.env.REACT_APP_CLOUD_NAME)
+        formData.append("upload_preset", 'trh9an5w')
 
-        const res = await fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/upload`, {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/dciugkbww/upload`, {
             method: "POST",
             body: formData
         })
