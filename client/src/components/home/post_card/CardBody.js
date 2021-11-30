@@ -16,13 +16,13 @@ const CardBody = ({post, theme}) => {
                     {
                         post.content.length < 60 
                         ? post.content 
-                        : readMore ? post.content + ' ' : post.content.slice(0, 60) + '.....'
+                        : readMore ? post.content + ' ' : post.content.slice(0, 60) + '....'
                     }
                 </span>
                 {
                     post.content.length > 60 &&
                     <span className="readMore" onClick={() => setReadMore(!readMore)}>
-                        {readMore ? 'Hide content' : 'Read more'}
+                        {readMore ? 'Ocultar contenido' : 'Leer Más'}
                     </span>
                 }
 

@@ -79,7 +79,6 @@ function App() {
           {status && <StatusModal />}
           {auth.token && <SocketClient />}
           {call && <CallModal />}
-          
           <Route exact path="/" component={auth.token ? Home : Login} />
           <Route exact path="/register" component={Register} />
 
