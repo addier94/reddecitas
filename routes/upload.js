@@ -10,6 +10,7 @@ cloudinary.config({
 })
 
 router.post('/destroy', auth, (req, res) => {
+  
   try {
     const public_ids = []
 

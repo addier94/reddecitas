@@ -33,7 +33,7 @@ const CardHeader = ({post}) => {
             <div className="d-flex">
                 <Avatar src={post.user.avatar} size="big-avatar" />
 
-                <div className="card_name">
+                <div className="card_name ml-2">
                     <h6 className="m-0">
                         <Link to={`/profile/${post.user._id}`} className="text-dark">
                             {post.user.username}

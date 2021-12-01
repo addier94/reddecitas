@@ -34,3 +34,10 @@ export const deleteDataAPI = async (url, token) => {
     })
     return res;
 }
+
+export const deleteResourcesImageApi = async (url, image, token) => {
+    const res = await axios.post(`/api/${url}`, image , {
+        headers: { Authorization: token }
+    })
+    return res;
+}

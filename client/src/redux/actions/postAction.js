@@ -1,6 +1,6 @@
 import { GLOBALTYPES } from './globalTypes'
 import { imageUpload } from '../../utils/imageUpload'
-import { postDataAPI, getDataAPI, patchDataAPI, deleteDataAPI } from '../../utils/fetchData'
+import { postDataAPI, getDataAPI, patchDataAPI, deleteDataAPI, deleteResourcesImageApi } from '../../utils/fetchData'
 import { createNotify, removeNotify } from './notifyAction'
 import axios from 'axios'
 
@@ -170,9 +170,7 @@ export const deletePost = ({post, auth, socket}) => async (dispatch) => {
     dispatch({ type: POST_TYPES.DELETE_POST, payload: post })
     
     try {
-        await axios.post(`/api/destroy`, post.images, {
-            headers: { Authorization: auth.token}
-        })
+        await deleteResourcesImageApi('destroy', post.images, auth.token)
 
         const res = await deleteDataAPI(`post/${post._id}`, auth.token)
 

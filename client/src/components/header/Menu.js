@@ -9,8 +9,8 @@ import NotifyModal from '../NotifyModal'
 const Menu = () => {
     const navLinks = [
         { label: 'Home', icon: 'home', path: '/'},
-        { label: 'Message', icon: 'near_me', path: '/message'},
-        { label: 'Discover', icon: 'explore', path: '/discover'}
+        { label: 'Message', icon: 'chat_bubble', path: '/message'},
+        { label: 'Discover', icon: 'favorite', path: '/discover'}
     ]
 
     const { auth, theme, notify } = useSelector(state => state)
@@ -40,10 +40,10 @@ const Menu = () => {
 
                         <span className="material-icons" 
                         style={{color: notify.data.length > 0 ? 'crimson' : ''}}>
-                            favorite
+                            notifications
                         </span>
 
-                        <span className="notify_length">{notify.data.length}</span>
+                        <span className="notify_length">{notify.data.length > 0 && notify.data.length}</span>
 
                     </span>
 
