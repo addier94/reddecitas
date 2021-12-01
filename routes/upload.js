@@ -11,16 +11,18 @@ cloudinary.config({
 
 router.post('/destroy', auth, (req, res) => {
   try {
-    const { public_id } = req.body[0];
-    
-    if ( !public_id ) return res.status(400).json({msg: "image doesn't exits"})
+    const public_ids = []
 
-    cloudinary.v2.uploader.destroy(public_id, async(err, result) => {
+    req.body.forEach(({public_id}) => public_ids.push(public_id.toString()))
+
+    if(!public_ids.length > 0) return res.status(400).json({msg: "Image doesn't exists"})
+
+    cloudinary.v2.api.delete_resources(public_ids, async(err, result) => {
       if (err) throw err;
 
-      res.json({msg: "Deleted success"})
+      res.json({msg: "Image deleted success"})
     })
-
+  
   } catch (error) {
     return res.status(500).json({msg: error.message})
   }

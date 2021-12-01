@@ -168,11 +168,12 @@ export const getPost = ({detailPost, id, auth}) => async (dispatch) => {
 
 export const deletePost = ({post, auth, socket}) => async (dispatch) => {
     dispatch({ type: POST_TYPES.DELETE_POST, payload: post })
-
+    
     try {
         await axios.post(`/api/destroy`, post.images, {
             headers: { Authorization: auth.token}
         })
+
         const res = await deleteDataAPI(`post/${post._id}`, auth.token)
 
         // Notify
