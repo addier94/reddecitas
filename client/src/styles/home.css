@@ -1,3 +1,42 @@
+/* --------- home page ------- */
+@media(min-width: 768px) {
+    .main{
+        background: rgba(0,0,0,0.1);
+    }
+    .home {
+        display: flex;
+        width: 100%;
+    }
+    .home .left-sidebar{
+        flex: 3;
+        height: calc(100vh - 54.5px);
+        overflow-y: scroll;
+        position: sticky;
+        top: 54.5px;
+        padding: 8px;
+    }
+    ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgb(179, 179, 179);
+      }
+    .home .feed {
+        flex:5.5;
+        padding: 8px;
+    }
+    .home .right-sidebar {
+        flex: 3.5;
+        height: calc(100vh - 54.5px);
+        overflow-y: scroll;
+        position: sticky;
+        top: 54.5px;
+        padding: 8px;
+    }
+}
 /* --------- Status ---------- */
 .status{
     background: white;

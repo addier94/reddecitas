@@ -74,8 +74,8 @@ function App() {
 
       <input type="checkbox" id="theme" />
       <div className={`App ${(status || modal) && 'mode'}`}>
-        <div className="main">
-          {auth.token && <Header />}
+        {auth.token && <Header />}
+        {/* <div className="main"> */}
           {status && <StatusModal />}
           {auth.token && <SocketClient />}
           {call && <CallModal />}
@@ -85,7 +85,7 @@ function App() {
           <PrivateRouter exact path="/:page" component={PageRender} />
           <PrivateRouter exact path="/:page/:id" component={PageRender} />
           
-        </div>
+        {/* </div> */}
       </div>
     </Router>
   );

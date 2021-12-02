@@ -11,7 +11,7 @@ const RightSideBar = () => {
     const dispatch = useDispatch()
 
     return (
-        <div className="mt-3">
+        <div>
             <UserCard user={auth.user} />
 
             <div className="d-flex justify-content-between align-items-center my-2">
@@ -37,7 +37,7 @@ const RightSideBar = () => {
                 </div>
             }
 
-            <div style={{opacity: 0.5}} className="my-2" >
+            <div style={{opacity: 0.5}}>
                 <a href="https://www.fernandezalfredo.com" target="_blank" rel="noreferrer"
                 style={{wordBreak: 'break-all'}} >
                     fernandezalfredo.com

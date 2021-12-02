@@ -28,12 +28,12 @@ code {
   background: white;
 }
 
-.main {
-  max-width: 1248px;
+/* .main {
+  max-width: 1000px;
   width: 100%;
   min-height: 100vh;
   margin: auto;
-}
+} */
 
 img {
   object-fit: cover;

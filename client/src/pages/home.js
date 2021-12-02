@@ -27,8 +27,16 @@ const Home = () => {
     },[])
 
     return (
-        <div className="home row mx-0">
-            <div className="col-md-8">
+        <div className="home">
+            <div className="left-sidebar">
+                <div className="py-2">
+                    <p>this parara</p>
+                    <p>this is custom text for make test in my social network like i like girls i can't have one becuase for moment don't generate moment </p>
+
+                </div>
+
+            </div>
+            <div className="feed">
                 <Status />
 
                 {
@@ -41,10 +49,31 @@ const Home = () => {
                 
             </div>
             
-            <div className="col-md-4">
+            <div className="right-sidebar">
                 <RightSideBar />
             </div>
         </div>
+
+
+
+        // <div className="home row mx-0">
+        //     <div className="col-md-8">
+        //         <Status />
+
+        //         {
+        //             homePosts.loading 
+        //             ? <img src={LoadIcon} alt="loading" className="d-block mx-auto" />
+        //             : (homePosts.result === 0 && homePosts.posts.length === 0)
+        //                 ? <h2 className="text-center">No hay Publicaciones</h2>
+        //                 : <Posts />
+        //         }
+                
+        //     </div>
+            
+        //     <div className="col-md-4">
+        //         <RightSideBar />
+        //     </div>
+        // </div>
     )
 }
 
