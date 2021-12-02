@@ -1,7 +1,7 @@
 /* --------- home page ------- */
 @media(min-width: 768px) {
     .main{
-        background: rgba(0,0,0,0.1);
+
     }
     .home {
         display: flex;

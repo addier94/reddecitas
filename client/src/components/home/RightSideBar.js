@@ -1,54 +1,62 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
-import UserCard from '../UserCard'
-import FollowBtn from '../FollowBtn'
-import LoadIcon from '../../images/loading.gif'
-import { getSuggestions } from '../../redux/actions/suggestionsAction'
+import UserCard from "../UserCard";
+import OnlineFriends from "./OnlineFriends";
+
+import "./RightSideBar.css";
 
 const RightSideBar = () => {
-    const { auth, suggestions } = useSelector(state => state)
-    const dispatch = useDispatch()
+  const { auth } = useSelector((state) => state);
 
-    return (
-        <div>
-            <UserCard user={auth.user} />
+  return (
+    <div>
+      <UserCard user={auth.user} />
 
-            <div className="d-flex justify-content-between align-items-center my-2">
-                <h5 className="text-danger">Suguerencias para tí</h5>
-                {
-                    !suggestions.loading &&
-                    <i className="fas fa-redo" style={{cursor: 'pointer'}}
-                    onClick={ () => dispatch(getSuggestions(auth.token)) } />
-                }
-            </div>
+      <div className="birthdayContainer">
+        <img className="birthdayImg" src="images/birthday.png" alt="" />
+        <span className="birthdayText">
+          <b>Nuria Foster</b> and <b>3 other friends</b> have a birhday today.
+        </span>
+      </div>
 
-            {
-                suggestions.loading
-                ? <img src={LoadIcon} alt="loading" className="d-block mx-auto my-4" />
-                : <div className="suggestions">
-                    {
-                        suggestions.users.map(user => (
-                            <UserCard key={user._id} user={user} >
-                                <FollowBtn user={user} />
-                            </UserCard>
-                        ))
-                    }
-                </div>
-            }
+      <h4 className="rightbarTitle">Amigos en linea</h4>
+      <ul className="rightbarFriendList">
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+        <OnlineFriends />
+      </ul>
 
-            <div style={{opacity: 0.5}}>
-                <a href="https://www.fernandezalfredo.com" target="_blank" rel="noreferrer"
-                style={{wordBreak: 'break-all'}} >
-                    fernandezalfredo.com
-                </a>
-                <small className="d-block">
-                    Desarrollador de software
-                </small>
-            </div>
+      <div style={{ opacity: 0.5 }}>
+        <a
+          href="https://www.fernandezalfredo.com"
+          target="_blank"
+          rel="noreferrer"
+          style={{ wordBreak: "break-all" }}
+        >
+          fernandezalfredo.com
+        </a>
+        <small className="d-block">Desarrollador de software</small>
+      </div>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default RightSideBar
+export default RightSideBar;
