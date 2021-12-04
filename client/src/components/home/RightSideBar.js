@@ -22,26 +22,9 @@ const RightSideBar = () => {
 
       <h4 className="rightbarTitle">Amigos en linea</h4>
       <ul className="rightbarFriendList">
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
-        <OnlineFriends />
+        {auth.user.following.map((item) => (
+          <OnlineFriends key={item._id} following={item} />
+        ))}
       </ul>
 
       <div style={{ opacity: 0.5 }}>
