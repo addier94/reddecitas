@@ -4,6 +4,8 @@ import { imageShow, videoShow } from "../../utils/mediaShow";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteMessages } from "../../redux/actions/messageAction";
 import Times from "./Times";
+import moment from "moment";
+moment.locale("es");
 
 const MsgDisplay = ({ user, msg, theme, data }) => {
   const { auth } = useSelector((state) => state);
@@ -19,11 +21,6 @@ const MsgDisplay = ({ user, msg, theme, data }) => {
 
   return (
     <>
-      <div className="chat_title">
-        <Avatar src={user.avatar} size="small-avatar" />
-        <span>{user.username}</span>
-      </div>
-
       <div className="you_content">
         {user._id === auth.user._id && (
           <i
@@ -39,6 +36,9 @@ const MsgDisplay = ({ user, msg, theme, data }) => {
               style={{ filter: theme ? "invert(1)" : "invert(0)" }}
             >
               {msg.text}
+              <span className="chat_time">
+                {moment(msg.createdAt).fromNow()}
+              </span>
             </div>
           )}
           {msg.media.map((item, index) => (
@@ -85,9 +85,9 @@ const MsgDisplay = ({ user, msg, theme, data }) => {
           </button>
         )}
       </div>
-
-      <div className="chat_time">
-        {new Date(msg.createdAt).toLocaleString()}
+      <div className="chat_title">
+        <Avatar src={user.avatar} size="small-avatar mr-1" />
+        {/* <span>{user.username}</span> */}
       </div>
     </>
   );

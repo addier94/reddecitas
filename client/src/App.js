@@ -24,8 +24,11 @@ import SocketClient from "./SocketClient";
 import { getNotifies } from "./redux/actions/notifyAction";
 import CallModal from "./components/message/CallModal";
 import Peer from "peerjs";
+import moment from "moment";
+import esLocale from "moment/locale/es";
 
 function App() {
+  moment.locale("es", [esLocale]); // can pass in 'en', 'fr', or 'es'
   const { auth, status, modal, call } = useSelector((state) => state);
   const dispatch = useDispatch();
 

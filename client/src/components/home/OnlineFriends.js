@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { MESS_TYPES } from "../../redux/actions/messageAction";
 import "./OnlineFriends.css";
 
 const OnlineFriends = ({ following }) => {
-  const { online } = useSelector((state) => state);
+  const { online, message } = useSelector((state) => state);
   const history = useHistory();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (message.firstLoad) {
+      dispatch({ type: MESS_TYPES.CHECK_ONLINE_OFFLINE, payload: online });
+    }
+  }, [online, dispatch, message.firstLoad]);
 
   const handleAddUser = (user) => {
     dispatch({

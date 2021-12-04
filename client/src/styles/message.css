@@ -158,16 +158,16 @@
 }
 .chat_text{
     padding: 9px 14px;
-    margin-bottom: 5px;
 }
 .chat_time{
-    font-size: 13px;
+    font-size: 11px;
+    margin: 0 8px;
     color: #777;
 }
 .you_message .chat_text{
-    background: #0048AA;
-    color: white;
-    border: 1px solid #0048AA;
+    background: #dcf8c6;
+    /* color: white; */
+    border: 1px solid #dcf8c6;
     border-radius: 14px 14px 0 14px;
 }
 .other_message .chat_text{
