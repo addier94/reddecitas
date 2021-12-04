@@ -15,7 +15,6 @@ const LeftSide = () => {
 
   const [search, setSearch] = useState("");
   const [searchUsers, setSearchUsers] = useState([]);
-
   const history = useHistory();
   const { id } = useParams();
 
