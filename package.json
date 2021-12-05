@@ -11,13 +11,15 @@
     "client-install": "cd client && npm install",
     "install-all": "concurrently \"npm run server-install\" \"npm run client-install\" ",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "build": "npm install && (cd client && react-scripts build)"
+    "build": "npm install && cd client && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "cd": "^0.3.3",
+    "client": "file:client",
     "cloudinary": "^1.27.1",
     "concurrently": "^6.0.0",
     "cookie-parser": "^1.4.5",
